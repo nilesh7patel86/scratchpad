@@ -839,7 +839,7 @@ Familiar Training EXP|8.00%|15.50%|23.50%|32.00%|50.00%|70.00%
 Merging Speed (Skillstone)|1.50%|2.50%|4.00%|6.00%|10.00%|14.00%
 Player Level 55
 
-F2P Set
+SetName|F2P Set
 Accessory|Amber Ring
 Construction Speed|1.25%|3.75%|6.25%|8.75%|12.50%|17.50%
 Wall DEF|0.15%|0.30%|0.50%|0.66%|1.00%|1.40%
@@ -1171,34 +1171,34 @@ Siege Engine ATK|2.40%|4.60%|7.00%|9.25%|14.00%|19.60%
 Army Max HP|1.95%|3.80%|5.75%|7.60%|11.50%|16.10%
 Player Level 35
 
-Morning Star
+Off-hand|Morning Star
 Infantry ATK|0.50%|1.00%|1.50%|2.00%|3.00%|4.20%
 Range ATK|1.10%|2.15%|3.25%|4.30%|6.50%|9.10%
 Player Level 25
 
-Noah's Cube
+Off-hand|Noah's Cube
 Cavalry ATK|0.85%|1.65%|2.50%|3.30%|5.00%|7.00%
 Range ATK|1.00%|2.00%|3.00%|4.00%|6.00%|8.40%
 Siege Engine ATK|2.40%|4.60%|7.00%|9.25%|14.00%|19.60%
 Player Level 35
 
-Rabid Claws
+Off-hand|Rabid Claws
 Cavalry ATK|0.70%|1.30%|2.00%|2.65%|4.00%|5.60%
 Infantry ATK|0.60%|1.15%|1.75%|2.30%|3.50%|4.90%
 Siege Engine ATK|1.95%|3.80%|5.75%|7.60%|11.50%|16.10%
 Player Level 31
 
-Tome of Saints
+Off-hand|Tome of Saints
 Research Speed|0.35%|0.65%|1.00%|1.30%|2.00%|2.80%
 Range ATK|0.50%|1.00%|1.50%|2.00%|3.00%|4.20%
 Player Level 13
 
-Umbral Whisper
+Off-hand|Umbral Whisper
 Trap ATK|0.60%|1.15%|1.75%|2.30%|3.50%|4.90%
 Army Max HP|1.60%|3.20%|5.00%|6.60%|10.00%|14.00%
 Player Level 31
 
-Vice Grips
+Off-hand|Vice Grips
 Research Speed|0.50%|1.50%|2.50%|3.50%|5.00%|7.00%
 Trap ATK|7.50%|1.50%|2.25%|3.00%|4.50%|6.30%
 Army Max HP|2.20%|4.30%|6.50%|8.60%|13.00%|18.20%
