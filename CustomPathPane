@@ -1,0 +1,132 @@
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+public abstract class CustomPane {
+    private final Stage primaryStage;
+
+    public CustomPane(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        Scene scene = new Scene(getRoot(), Color.TRANSPARENT);
+        primaryStage.setScene(scene);
+    }
+
+    protected abstract Parent getRoot();
+
+    public void show() {
+        primaryStage.show();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import javafx.geometry.NodeOrientation;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.SVGPath;
+import javafx.stage.Stage;
+
+public class CustomPane3 extends CustomPane {
+    //M 0 0 H 1920 V 1080 H 0 Z M 40 40 V 148 L 20 168 V912 L 40 932 V1040 H424 L444 1060 H1476 L1496 1040 H1880 V932 L1900 912V168L1880 148 V40H1496 L1476 20H444L424 40Z
+    public CustomPane3(Stage stage) {
+        super(stage);
+    }
+
+    @Override
+    protected Parent getRoot() {
+        AnchorPane ap = new AnchorPane();
+        ap.setStyle("-fx-background-color: rgba(100,100,100,1);");
+        StackPane mainframe = new StackPane();
+        SVGPath shape = new SVGPath();
+        shape.setContent("M 0 0 H 1920 V 1080 H 0 Z M 40 40 V 148 L 20 168 V912 L 40 932 V1040 H424 L444 1060 H1476 L1496 1040 H1880 V932 L1900 912V168L1880 148 V40H1496 L1476 20H444L424 40Z");
+        mainframe.setShape(shape);
+        mainframe.setStyle("-fx-background-color: rgb(37,43,57)");
+        mainframe.setEffect(new DropShadow());
+        ap.getChildren().add(mainframe);
+        AnchorPane.setLeftAnchor(mainframe, 0.0);
+        AnchorPane.setRightAnchor(mainframe, 0.0);
+        AnchorPane.setTopAnchor(mainframe, 0.0);
+        AnchorPane.setBottomAnchor(mainframe, 0.0);
+
+
+        Button left = new Button();
+        left.setOnAction(event -> new Alert(Alert.AlertType.INFORMATION, "Left Button clicked").showAndWait());
+        left.setEffect(new DropShadow());
+        Button right = new Button();
+        right.setOnAction(event -> new Alert(Alert.AlertType.INFORMATION, "Right Button clicked").showAndWait());
+        right.setEffect(new DropShadow());
+
+
+        SVGPath leftShape = new SVGPath();
+        leftShape.setContent("M 40 168 L 10 198 V 882 L 40 912 V 572 L 30 562 V 518 L 40 508 Z M 40 513 V 567 L 33 560 V 520 Z");
+        left.setShape(leftShape);
+        left.getStyleClass().add("left-panel");
+        //left.setStyle("-fx-base: darkcyan;-fx-background-color: linear-gradient(to bottom, #24C0F0, #3E1FA9)");
+        left.setPrefSize(30, 744);
+        ap.getChildren().add(left);
+
+        SVGPath rightShape = new SVGPath();
+        rightShape.setContent("M1960 168 1990 198V882L1960 912V572L1970 562V518L1960 508ZM1960 513V567L1967 560V520Z");
+        right.setShape(rightShape);
+        //right.setStyle("-fx-base: darkcyan;-fx-background-color: linear-gradient(to bottom, #24C0F0, #3E1FA9)");
+        right.getStyleClass().add("right-panel");
+        right.setPrefSize(30, 744);
+        ap.getChildren().add(right);
+        AnchorPane.setLeftAnchor(left, 10.0);
+        AnchorPane.setTopAnchor(left, 168.0);
+        AnchorPane.setRightAnchor(right, 10.0);
+        AnchorPane.setTopAnchor(right, 168.0);
+
+
+        HBox rightTopBox = new HBox(10);
+        rightTopBox.setPrefHeight(30);
+        rightTopBox.setMaxHeight(30);
+        rightTopBox.setMinHeight(30);
+        rightTopBox.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+        rightTopBox.setStyle("-fx-background-color: transparent");
+
+
+        Button exitBtn = new Button("");
+        exitBtn.setFocusTraversable(false);
+        exitBtn.setStyle("-fx-base: red;");
+        exitBtn.setOnAction(e -> System.exit(0));
+        fixedSquare(exitBtn, 20);
+
+        Button greenBtn = new Button("");
+        greenBtn.setFocusTraversable(false);
+        greenBtn.setStyle("-fx-base: darkgreen;");
+        fixedSquare(greenBtn, 20);
+
+        Button orangeBtn = new Button("");
+        orangeBtn.setFocusTraversable(false);
+        orangeBtn.setStyle("-fx-base: darkorange;");
+        fixedSquare(orangeBtn, 20);
+
+        rightTopBox.getChildren().addAll(exitBtn, orangeBtn, greenBtn);
+
+        AnchorPane.setTopAnchor(rightTopBox, 5.0);
+        AnchorPane.setRightAnchor(rightTopBox, 5.0);
+        ap.getChildren().add(rightTopBox);
+        return ap;
+    }
+
+    private void fixedSquare(Button b, double size) {
+        b.setMinSize(size, size);
+        b.setMaxSize(size, size);
+        b.setPrefSize(size, size);
+    }
+
+
+}
+//mainframe
+//M 0 0 H 1920 V 1080 H 0 Z M 40 40 V 148 L 20 168 V 912 L 40 932 V 1040 H 424 L 444 1060 H 1476 L 1496 1040 H 1880 V 932 L 1900 912 V 168 L 1880 148 V 40 H 1496 L 1476 20 H 444 L 424 40 Z
+//left
+//M 40 168 L 10 198 V 882 L 40 912 V 572 L 30 562 V 518 L 40 508 Z M 40 513 V 567 L 33 560 V 520 Z
+//right
+//M1960 168 1990 198V882L1960 912V572L1970 562V518L1960 508ZM1960 513V567L1967 560V520Z
