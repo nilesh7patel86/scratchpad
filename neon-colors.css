@@ -1,0 +1,27 @@
+root > * {
+    -neon-yellow-1: #ffff00;
+    -neon-yellow-2: #ffff33;
+    -neon-yellow-3: #f2ea02;
+    -neon-yellow-4: #e6fb04;
+    -neon-red-1: #ff0000;
+    -neon-red-2: #fd1c03;
+    -neon-red-3: #ff3300;
+    -neon-red-4: #ff6600;
+    -neon-green-1: #00ff00;
+    -neon-green-2: #00ff33;
+    -neon-green-3: #00ff66;
+    -neon-green-4: #33ff00;
+    -neon-blue-1: #00ffff;
+    -neon-blue-2: #099fff;
+    -neon-blue-3: #0062ff;
+    -neon-blue-4: #0033ff;
+    -neon-pink-1: #ff00ff;
+    -neon-pink-2: #ff00cc;
+    -neon-pink-3: #ff0099;
+    -neon-pink-4: #cc00ff;
+    -neon-purple-1: #9d00ff;
+    -neon-purple-2: #cc00ff;
+    -neon-purple-3: #6e0dd0;
+    -neon-purple-4: #9900ff;
+    -neon-orange-1: #ff901b
+}
